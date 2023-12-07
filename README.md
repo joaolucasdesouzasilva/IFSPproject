@@ -94,12 +94,16 @@ Figure 6 - Example of simulation of SOLCAST + PSIM’s Thermal Module.
 
 In Figure 7, the proposed architecture implemented in the AWS environment is depicted, utilizing SOLCAST tables and PSIM simulations, culminating in prediction. Meanwhile, Table 1 showcases all the described steps.
 
+The process involves eight pivotal steps to execute the project seamlessly. It commences by accessing the AWS Cloud through the Learner Lab, establishing an AWS Cloud9 environment for work, and creating an EC2 instance within it. Subsequently, three S3 buckets are set up in the us-east-1 region, designated for various data purposes. Original datasets find their place in the 'data-ifsp-1000' bucket, managed and stored via the Command Line Interface. AWS Glue initiating a database named 'ifsp_db' and configuring a crawler 'ifspcrawler' to organize data, while Athena Query Editor refines queries and stores results in designated buckets. Visualizations using QuickSight are created, and refined files are prepared for utilization in PSIM software, with results subsequently uploaded to the appropriate bucket. Finally, a Sagemaker environment is crafted for in-depth data processing, leveraging Jupyter notebooks to apply Machine Learning techniques, making the results available for visualization in QuickSight.
+
 <p align="center">
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/2029fe10-7d93-4bd2-9c2c-ff1a46859f8e" width="800">
 </p>
+
 Figure 7 - Proposed AWS Environment Architecture
 
-|     Tarefa    |                                                                                  Detail                                                                                 |
+
+|     Task    |                                                                                  Detail                                                                                 |
 |:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |        1      |     Accessing   AWS Cloud via the Learner Lab and creating an AWS Cloud9 environment.                                                                                   |
 |        2      |     Creating   a new EC2 environment with a t2.large instance.                                                                                                          |
@@ -114,6 +118,7 @@ Figure 7 - Proposed AWS Environment Architecture
 |       7d      |     Uploading   PSIM results to the resultados-ifsp-1000 bucket.                                                                                                        |
 |       8a      |     Creating   a Sagemaker   environment to use the Jupyter   notebook for reading, processing, and applying Machine Learning.                                          |
 |       8b      |     Making   results available for visualization in QuickSight.                                                                                                         |
+Table 1 - Steps in the AWS Environment.
 
 ## 5 - Discussion and Results
 
