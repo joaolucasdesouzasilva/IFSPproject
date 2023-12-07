@@ -73,7 +73,12 @@ Subsequently, with the characteristics of the switches obtained in the simulatio
 Figure 4 - Flowchart for thermal analysis of a DC/AC converter. The inputs are the yearly mission profile and the component characteristics extracted from the PSIM’s device library or datasheet [8].
 
 
-SOLCAST provides yearly data collected at 5-minute intervals spanning from December 30, 2017, to December 31, 2018, specifically for Teresina, PI. This comprehensive dataset encompasses 20 features, including parameters such as Direct Horizontal Irradiance (DHI), Air Temperature, and more, totaling a significant 105,676 samples. This detailed information offers valuable insights into the climatic and environmental conditions over this period, enabling comprehensive analyses and informed decision-making in various fields and industries. 
+SOLCAST provides yearly data collected at 5-minute intervals spanning from December 30, 2017, to December 31, 2018, specifically for Teresina, PI. This comprehensive dataset encompasses 20 features (Table I), including parameters such as Direct Horizontal Irradiance (DHI), Air Temperature, and more, totaling a significant 105,676 samples. This detailed information offers valuable insights into the climatic and environmental conditions over this period, enabling comprehensive analyses and informed decision-making in various fields and industries.
+
+<p align="center">
+  Table I - Features description
+</p>
+
 
 | air_temp           | °C    | Air Temperature The air temperature at 2 meters above surface level.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |--------------------|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -114,7 +119,7 @@ Figure 6 - Example of simulation of SOLCAST + PSIM’s Thermal Module.
 
 ## 4 - Methodology in AWS environment
 
-In Figure 7, the proposed architecture implemented in the AWS environment is depicted, utilizing SOLCAST tables and PSIM simulations, culminating in prediction. Meanwhile, Table 1 showcases all the described steps.
+In Figure 7, the proposed architecture implemented in the AWS environment is depicted, utilizing SOLCAST tables and PSIM simulations, culminating in prediction. Meanwhile, Table II showcases all the described steps.
 
 The process involves eight pivotal steps to execute the project seamlessly. It commences by accessing the AWS Cloud through the Learner Lab, establishing an AWS Cloud9 environment for work, and creating an EC2 instance within it. Subsequently, three S3 buckets are set up in the us-east-1 region, designated for various data purposes. Original datasets find their place in the 'data-ifsp-1000' bucket, managed and stored via the Command Line Interface. AWS Glue initiates a database named 'ifsp_db' and configures a crawler 'ifspcrawler' to organize data, while Athena Query Editor refines queries and stores results in designated buckets. Visualizations using QuickSight are created, and refined files are prepared for utilization in PSIM software, with results subsequently uploaded to the appropriate bucket. Finally, a Sagemaker environment is crafted for in-depth data processing, leveraging Jupyter notebooks to apply Machine Learning techniques, making the results available for visualization in QuickSight.
 
@@ -127,7 +132,7 @@ Figure 7 - Proposed AWS Environment Architecture
 <p></p>
 
 <p align="center">
-  Table 1 - Steps in the AWS Environment.
+  Table II - Steps in the AWS Environment.
 </p>
 
 |     Task      |                                                                                  Details                                                                                |
