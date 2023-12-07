@@ -119,9 +119,11 @@ Later, the Pearson correlation matrix was constructed. The Pearson correlation m
 Figure 9 - Pearson correlation matrix.
 
 
-## 6 - Final Considerations
+## 6 - Final Considerations and Future Works
 
 In the exploratory analysis, it was observed that junction temperature is linked to irradiance and ambient temperature. However, in machine learning studies...
+
+In future projects, Amazon Kinesis will be employed for real-time data ingestion, allowing the collection and processing of diverse data sets, such as inverter readings and plant monitoring data. AWS IoT Core will be utilized to gather and manage sensors within PV plants. AWS Lambda functions will serve as a key component for processing real-time data, enabling tasks such as computing performance metrics and identifying anomalies. Moreover, Amazon DynamoDB will be implemented as a fully managed, scalable NoSQL database, adept at real-time structured data storage, efficiently managing high write and read rates.
 
 ## References
 
