@@ -121,7 +121,7 @@ Figure 7 - Proposed AWS Environment Architecture
 |       7b      |     Using   Athena results for QuickSight   visualization.                                                                                                              |
 |       7c      |     Downloading   refined files for use in the PSIM software.                                                                                                           |
 |       7d      |     Uploading   PSIM results to the resultados-ifsp-1000 bucket.                                                                                                        |
-|       8a      |     Creating   a Sagemaker   environment to use the Jupyter   notebook for reading, processing, and applying Machine Learning.                                          |
+|       8a      |     Creation of an environment in Sagemaker to use the Jupyter notebook for reading, processing, and applying Machine Learning. The domain IFSP-SM was created with default settings and IAM role LabRole. Also, a user profile named lesfmv was created to use the Studio. In the SageMaker Studio environment, a JupyterLab environment called vianjo was created. It has 100GB of storage with the ml.t3.large instance.                                          |
 |       8b      |     Making   results available for visualization in QuickSight.                                                                                                         |
 
 
