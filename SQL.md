@@ -298,7 +298,7 @@ GROUP BY
 
 ~~~sql
 SELECT periodend, airtemp, gtotracking
-FROM teresina
+FROM media_hora_2018_teresina
 limit 5;
 ~~~
 | # | periodend    | airtemp  | gtitracking |
