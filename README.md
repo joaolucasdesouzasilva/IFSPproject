@@ -73,7 +73,9 @@ Subsequently, with the characteristics of the switches obtained in the simulatio
 Figure 4 - Flowchart for thermal analysis of a DC/AC converter. The inputs are the yearly mission profile and the component characteristics extracted from the PSIM’s device library or data shee.
 
 ## 4 - Methodology in AWS environment
-
+<p align="center">
+  <img src= "https://github.com/joaolucasdesouzasilva/IFSPproject/assets/48127394/3c4a9f1d-619c-4a0d-9c9d-f53ad0b80aee" width="800">
+</p>
 
 
 ## 5 - Discussion and Results
