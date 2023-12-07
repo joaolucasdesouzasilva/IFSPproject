@@ -102,8 +102,12 @@ The process involves eight pivotal steps to execute the project seamlessly. It c
 
 Figure 7 - Proposed AWS Environment Architecture
 
+<p></p>
 
-|     Task    |                                                                                  Detail                                                                                 |
+<p align="center">
+  Table 1 - Steps in the AWS Environment.
+</p>
+|     Task      |                                                                                  Details                                                                                |
 |:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |        1      |     Accessing   AWS Cloud via the Learner Lab and creating an AWS Cloud9 environment.                                                                                   |
 |        2      |     Creating   a new EC2 environment with a t2.large instance.                                                                                                          |
@@ -118,7 +122,7 @@ Figure 7 - Proposed AWS Environment Architecture
 |       7d      |     Uploading   PSIM results to the resultados-ifsp-1000 bucket.                                                                                                        |
 |       8a      |     Creating   a Sagemaker   environment to use the Jupyter   notebook for reading, processing, and applying Machine Learning.                                          |
 |       8b      |     Making   results available for visualization in QuickSight.                                                                                                         |
-Table 1 - Steps in the AWS Environment.
+
 
 ## 5 - Discussion and Results
 
