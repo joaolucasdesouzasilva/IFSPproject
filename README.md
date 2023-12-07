@@ -8,8 +8,8 @@ The objective of this GitHub is to present a solution developed in the Amazon en
 **Federal Institute of Education, Science and Technology of São Paulo - IFSP**, Campinas Campus
 
 **Team**: \
-Andrei \
-Francisco Victor \
+Andrei Carvalho Ribeiro (CP3021912)\
+Francisco Victor Esteves Lemos (CP3021769) \
 João Lucas de Souza Silva (CP3021963)
 
 ## 1 - Introduction
