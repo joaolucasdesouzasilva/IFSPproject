@@ -184,9 +184,9 @@ In future activies, Amazon Kinesis will be employed for real-time data ingestion
 [3] H. Wang, K. Ma, and F. Blaabjerg, “Design for Reliability of Power Electronic Systems”, in IECON 2012 - 38th Annual Conference on IEEE Industrial Electronics Society, 2012, pp. 33–44.\
 [4] P. Hacke et al., “A status review of photovoltaic power conversion equipment reliability, safety, and quality assurance protocols”, Renewable and Sustainable Energy Reviews, vol. 82, pp. 1097-1112, Feb. 2018. doi: 10.1016/j.rser.2017.07.043.\
 [5] A. Golnas, “PV system reliability: An operator’s perspective”, IEEE Journal of Photovoltaics, vol. 3, no. 1, pp. 416-421, 2013. doi: 10.1109/JPHOTOV.2012.2215015\
-[6] J. L. de Souza Silva, M. M. Cavalcante, S. B. Martins, E. J. da Silva, T. A. dos S. Barros, and M. G. Villalva, "Data-Driven Analysis of Solar Photovoltaic Systems: Correlation and Distribution Patterns," presented at the Brazilian Congress on Electrical Power Systems (COBEP), Campinas, Brazil, 2023.
-[7] J. L. de Souza Silva. (2020). Estudo e Desenvolvimento Experimental de Otimizadores de Potência para Sistemas Fotovoltaicos Conectados à Rede Elétrica. Masters dissertation, University of Campinas, Brazil.
-
+[6] J. L. de Souza Silva, M. M. Cavalcante, S. B. Martins, E. J. da Silva, T. A. dos S. Barros, and M. G. Villalva, "Data-Driven Analysis of Solar Photovoltaic Systems: Correlation and Distribution Patterns," presented at the Brazilian Congress on Electrical Power Systems (COBEP), Campinas, Brazil, 2023. \
+[7] J. L. de Souza Silva. (2020). Estudo e Desenvolvimento Experimental de Otimizadores de Potência para Sistemas Fotovoltaicos Conectados à Rede Elétrica. Masters dissertation, University of Campinas, Brazil.\
+[8] A. C. Ribeiro, et al. “Junction Temperature Prediction: A Multi-Featured Dataset Approach”, in 8th IEEE International Conference on Southern Power Electronics Conference (SPEC), 2023, Florianopolis, Brazil. 
 
 
 
