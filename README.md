@@ -5,7 +5,7 @@ The objective of this GitHub is to present a solution developed in the Amazon en
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/4eb25168-161b-4193-a9ff-4b39f373adb3" width="100">
 </p>
 
-**Federal Institute of Education, Science and Technology of São Paulo - IFSP** , Campinas Campus
+**Federal Institute of Education, Science and Technology of São Paulo - IFSP**, Campinas Campus
 
 **Team**: \
 Andrei \
@@ -72,15 +72,56 @@ Subsequently, with the characteristics of the switches obtained in the simulatio
 
 Figure 4 - Flowchart for thermal analysis of a DC/AC converter. The inputs are the yearly mission profile and the component characteristics extracted from the PSIM’s device library or data shee.
 
-## 4 - Methodology in AWS environment
-<p align="center">
-  <img src= "https://github.com/joaolucasdesouzasilva/IFSPproject/assets/48127394/3c4a9f1d-619c-4a0d-9c9d-f53ad0b80aee" width="800">
-</p>
 
+SOLCAST provides yearly data collected at 5-minute intervals spanning from December 30, 2017, to December 31, 2018, specifically for Teresina, PI and Curitiba-PR. This comprehensive dataset encompasses 20 features, including parameters such as Direct Horizontal Irradiance (DHI), Air Temperature, and more, totaling a significant 105,676 samples. This detailed information offers valuable insights into the climatic and environmental conditions over this period, enabling comprehensive analyses and informed decision-making in various fields and industries. 
+For instance, in Figure 5, there are "Plane of Array (POA) irradiance [W/m²]" and "Air temperature [ºC]" listed.
+
+<p align="center">
+  <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/7b3da74f-b434-468b-8abe-99f6bcf54cfe" width="600">
+</p>
+Figure 5 - Plane of Array (POA) irradiance [W/m²] and Air temperature [ºC]
+
+Following that, in Figure 6, the two chosen days with the highest and lowest average temperatures display the simulated junction temperature behavior in PSIM. The graph illustrates that on the hottest day, the behavior differs throughout the hours of usage.
+
+<p align="center">
+  <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/c6fae9a9-4de3-4b7a-ace0-d08c56d7a6ae" width="800">
+</p>
+Figure 6 - Example of simulation of SOLCAST + PSIM’s Thermal Module.
+
+## 4 - Methodology in AWS environment
+
+<p align="center">
+  <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/2029fe10-7d93-4bd2-9c2c-ff1a46859f8e" width="800">
+</p>
+Figure 7 - Proposed AWS Environment Architecture
 
 ## 5 - Discussion and Results
 
+### 5.1 Exploratory Analysis
+
+The first step of the exploratory analysis involved generating boxplots (Figura 8 and 9), revealing the significance of data preprocessing. The removal of zeros notably enhanced the clarity of the boxplot. However, for temperature, the boxplot highlighted several outliers.
+
+<p align="center">
+  <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/e5552dee-aa69-4a25-b5c3-ed7886ed144c" width="400">
+</p>
+Figure 8 - Boxplots for irradiance (left), irradiance removing zero (center), and ambient temperature (right).
+
+<p align="center">
+  <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/472c6864-d42a-48bb-8c53-7464d1937783" width="400">
+</p>
+Figure 9 - Boxplots for junction temperature (left) and its swing (right).
+
+Later, the Pearson correlation matrix was constructed. The Pearson correlation matrix is crucial because it helps unveil relationships between variables. In this analysis, it revealed that the junction temperature (Tj) had a stronger association with irradiance while also displaying a direct correlation with ambient temperature, as shown in Figure 10.
+
+<p align="center">
+  <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/68a99830-013b-4880-b42d-c5ee543e391e" width="500">
+</p>
+Figure 9 - Pearson correlation matrix.
+
+
 ## 6 - Final Considerations
+
+In the exploratory analysis, it was observed that junction temperature is linked to irradiance and ambient temperature. However, in machine learning studies...
 
 ## References
 
