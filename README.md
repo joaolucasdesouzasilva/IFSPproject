@@ -42,7 +42,7 @@ In Figure 2, we present the model of a typical PV inverter. The inverter usually
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/ca9758ec-210d-4adc-9d6b-8b5951f28b46" width="800">
 </p>
 
-Figure 2 - Example of typical PV Inverter.
+Figure 2 - Example of a typical PV Inverter.
 
 Key points highlighting the necessity of this study also include: 
 - **Prevention of Premature Failures**: High temperatures can lead to physical damage in components, significantly reducing the lifespan of photovoltaic inverters.
@@ -55,22 +55,22 @@ Key points highlighting the necessity of this study also include:
 
 For the methodology, data was initially collected from one database, for Teresina-Piauí, with data collection every 5 minutes to be used in simulations and models. This database was later uploaded to the Amazon environment and processed within it. The processing mainly involved converting this data to an hourly time scale and obtaining the daily average, to be applied in a subsequent phase.
 
-The next step involved simulating the inverter with switches in the PSIM software to estimate the temperature. PSIM software is one of the most robust power electronics software for this purpose, with real data on losses from the switches and other components. This simulation made it possible to observe the temperature behavior at the junction of the switches. In this simulation, an inverter topology with six switches, a three-phase half-bridge converter, was used. Refer to Figure 3.
+The next step involved simulating the inverter with switches in the PSIM software to estimate the temperature. PSIM software is one of the most robust power electronics software for this purpose, with real data on losses from the switches and other components. This simulation made it possible to observe the temperature behavior at the junction of the switches. In this simulation, an inverter topology with six switches (three-phase half-bridge converter) was used. Refer to Figure 3.
 
 
 <p align="center">
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/b2bba95b-93a8-4ea6-88a8-5d793bec47ee" width="800">
 </p>
 
-Figure 3 - PV Inverter in PSIM.
+Figure 3 - PV Inverter in PSIM [8].
 
-Subsequently, with the characteristics of the switches obtained in the simulation and data from each city, it is possible to apply ML models that allow predicting the thermal behavior of these switches. Figure 4 illustrates the proposal.
+Subsequently, with the characteristics of the switches obtained in the simulation and data from a city, it is possible to apply ML models that allow the prediction of the thermal behavior of these switches. Figure 4 illustrates the proposal.
 
 <p align="center">
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/cffc3e5b-0971-4504-a09a-fa7e4c8d18e4" width="800">
 </p>
 
-Figure 4 - Flowchart for thermal analysis of a DC/AC converter. The inputs are the yearly mission profile and the component characteristics extracted from the PSIM’s device library or data shee.
+Figure 4 - Flowchart for thermal analysis of a DC/AC converter. The inputs are the yearly mission profile and the component characteristics extracted from the PSIM’s device library or datasheet [8].
 
 
 SOLCAST provides yearly data collected at 5-minute intervals spanning from December 30, 2017, to December 31, 2018, specifically for Teresina, PI. This comprehensive dataset encompasses 20 features, including parameters such as Direct Horizontal Irradiance (DHI), Air Temperature, and more, totaling a significant 105,676 samples. This detailed information offers valuable insights into the climatic and environmental conditions over this period, enabling comprehensive analyses and informed decision-making in various fields and industries. For instance, in Figure 5, there are "Plane of Array (POA) irradiance [W/m²]" and "Air temperature [ºC]" listed.
@@ -93,7 +93,7 @@ Figure 6 - Example of simulation of SOLCAST + PSIM’s Thermal Module.
 
 In Figure 7, the proposed architecture implemented in the AWS environment is depicted, utilizing SOLCAST tables and PSIM simulations, culminating in prediction. Meanwhile, Table 1 showcases all the described steps.
 
-The process involves eight pivotal steps to execute the project seamlessly. It commences by accessing the AWS Cloud through the Learner Lab, establishing an AWS Cloud9 environment for work, and creating an EC2 instance within it. Subsequently, three S3 buckets are set up in the us-east-1 region, designated for various data purposes. Original datasets find their place in the 'data-ifsp-1000' bucket, managed and stored via the Command Line Interface. AWS Glue initiating a database named 'ifsp_db' and configuring a crawler 'ifspcrawler' to organize data, while Athena Query Editor refines queries and stores results in designated buckets. Visualizations using QuickSight are created, and refined files are prepared for utilization in PSIM software, with results subsequently uploaded to the appropriate bucket. Finally, a Sagemaker environment is crafted for in-depth data processing, leveraging Jupyter notebooks to apply Machine Learning techniques, making the results available for visualization in QuickSight.
+The process involves eight pivotal steps to execute the project seamlessly. It commences by accessing the AWS Cloud through the Learner Lab, establishing an AWS Cloud9 environment for work, and creating an EC2 instance within it. Subsequently, three S3 buckets are set up in the us-east-1 region, designated for various data purposes. Original datasets find their place in the 'data-ifsp-1000' bucket, managed and stored via the Command Line Interface. AWS Glue initiates a database named 'ifsp_db' and configures a crawler 'ifspcrawler' to organize data, while Athena Query Editor refines queries and stores results in designated buckets. Visualizations using QuickSight are created, and refined files are prepared for utilization in PSIM software, with results subsequently uploaded to the appropriate bucket. Finally, a Sagemaker environment is crafted for in-depth data processing, leveraging Jupyter notebooks to apply Machine Learning techniques, making the results available for visualization in QuickSight.
 
 <p align="center">
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/2029fe10-7d93-4bd2-9c2c-ff1a46859f8e" width="800">
@@ -146,7 +146,7 @@ Figure 8 - Boxplots for irradiance (left), irradiance removing zero (center), an
 Figure 9 - Boxplots for junction temperature (left) and its swing (right).
 
 
-Later, the Pearson correlation matrix was constructed. The Pearson correlation matrix is crucial because it helps unveil relationships between variables. In this analysis, it revealed that the junction temperature (Tj) had a stronger association with irradiance while also displaying a direct correlation with ambient temperature, as shown in Figure 10.
+Later, the Pearson correlation matrix was constructed. The Pearson correlation matrix is crucial because it helps unveil relationships between variables. This analysis revealed that the junction temperature (Tj) had a stronger association with irradiance while also displaying a direct correlation with ambient temperature, as shown in Figure 10.
 
 <p align="center">
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/68a99830-013b-4880-b42d-c5ee543e391e" width="500">
@@ -167,15 +167,15 @@ Lastly, the Multi-layer Perceptron (MLP), a classical neural network, was explor
 <p align="center">
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/b057ce23-66db-4f23-91d9-cb62761cc447" width="400">
 </p>
-Figure 11 - Method results.
+Figure 11 - Method results with a specific seed (42).
 
 ## 6 - Final Considerations and Future Works
 
-In the exploratory analysis, it was observed that junction temperature is linked to irradiance and ambient temperature. We applied three models: (i) linear regression, (ii) decision tree and (iii) multilayer perceptron. Linear regression is simple and easy to use with new samples, because it provides equations for both targets. Its performance (R2 and MSE) was lower compared to other models. It makes senses since the junction temperature oscillation is not well described by linear dynamics. Decision tree permits that we can interpret the regression process by examining the variables and their threshold. An interesting observation for this model is that as the depth increases, the model becomes more flexible, but when depth exceeds 10, the decision tree starts to lose quality on the validation set (overfitting). The MLP is a classical neural network na it permit us to perform several tests considering different architectures by varying the number of hidden layers and the number of neurons distributed among them. We also conducted tests with different activation functions such as ReLU and the sigmoid function. 
+In the exploratory analysis, it was observed that junction temperature is linked to irradiance and ambient temperature. We applied three models: (i) linear regression, (ii) decision tree, and (iii) multilayer perceptron. Linear regression is simple and easy to use with new samples because it provides equations for both targets. Its performance (R2 and MSE) was lower compared to other models. It makes sense since the junction temperature oscillation is not well described by linear dynamics. The decision tree permits us to interpret the regression process by examining the variables and their threshold. An interesting observation for this model is that as the depth increases, the model becomes more flexible, but when depth exceeds 10, the decision tree starts to lose quality on the validation set (overfitting). The MLP is a classical neural network that permits us to perform several tests considering different architectures by varying the number of hidden layers and the number of neurons distributed among them. We also conducted tests with different activation functions such as ReLU and the sigmoid function. 
 
 Our approach to big data did not primarily focus on cost reduction or the optimal selection of services. Instead, our decisions regarding services, features, and configurations were heavily influenced and backed by the insights gained from laboratory experiments and the capstone project. However, in the realm of corporate or industrial projects, establishing clearer governance and defining access to various project stages is crucial to mitigate conflicts and role shadowing. Additionally, robust measures need implementation to safeguard data access and maintain security.
 
-In future activies, Amazon Kinesis will be employed for real-time data ingestion, allowing the collection and processing of diverse data sets, such as inverter readings and plant monitoring data. AWS IoT Core will be utilized to gather and manage sensors within PV plants. AWS Lambda functions will serve as a key component for processing real-time data, enabling tasks such as computing performance metrics and identifying anomalies. Moreover, Amazon DynamoDB will be implemented as a fully managed, scalable NoSQL database, adept at real-time structured data storage, efficiently managing high write and read rates.
+In future activities, Amazon Kinesis will be employed for real-time data ingestion, allowing the collection and processing of diverse data sets, such as inverter readings and plant monitoring data. AWS IoT Core will be utilized to gather and manage sensors within PV plants. AWS Lambda functions will serve as a key component for processing real-time data, enabling tasks such as computing performance metrics and identifying anomalies. Moreover, Amazon DynamoDB will be implemented as a fully managed, scalable NoSQL database, adept at real-time structured data storage and efficiently managing high write and read rates.
 
 ## References
 
