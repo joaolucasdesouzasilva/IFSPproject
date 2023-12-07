@@ -149,10 +149,29 @@ Later, the Pearson correlation matrix was constructed. The Pearson correlation m
 </p>
 Figure 10 - Pearson correlation matrix.
 
+### 5.2 Applying ML in SageMaker
+
+Three distinct models were employed to forecast junction temperature in switches: Linear Regression, Decision Tree, and Multi-layer Perceptron (MLP).
+
+Linear Regression, known for its simplicity and ease of application with new data points, provides equations for both target variables. Despite its user-friendly nature, its performance, measured by metrics like R2 and MSE, tends to be inferior to other models. This is particularly evident when attempting to capture the oscillations in junction temperature, as linear dynamics struggle to describe this phenomenon adequately.
+
+The Decision Tree model offers insightful visualization capabilities, allowing us to comprehend the regression process by examining variables and their respective boundaries. However, as the depth of the tree increases beyond 10 levels, the model's performance diminishes notably, resulting in a decline in quality when validated against the test dataset.
+
+Lastly, the Multi-layer Perceptron (MLP), a classical neural network, was explored. Various architectures were tested by manipulating the number of hidden layers and neurons distributed within them. Additionally, diverse activation functions such as ReLU and the sigmoid function were employed during experimentation. This approach aimed to leverage the flexibility of neural networks to capture the intricate patterns in junction temperature dynamics.
+
+
+<p align="center">
+  <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/b057ce23-66db-4f23-91d9-cb62761cc447" width="400">
+</p>
+Figure 11 - Method results.
 
 ## 6 - Final Considerations and Future Works
 
-In the exploratory analysis, it was observed that junction temperature is linked to irradiance and ambient temperature. We applied three models: (i) linear regression, (ii) decision tree and (iii) multilayer perceptron. Linear regression is simple and easy to use with new samples, because it provides equations for both targets. Its performance (R2 and MSE) was lower compared to other models. It makes senses since the junction temperature oscillation is not well described by linear dynamics. Decision tree permits that we can interpret the regression process by examining the variables and their threshold. An interesting observation for this model is that as the depth increases, the model becomes more flexible, but when depth exceeds 10, the decision tree starts to lose quality on the validation set (overfitting). The MLP is a classical neural network na it permit us to perform several tests considering different architectures by varying the number of hidden layers and the number of neurons distributed among them. We also conducted tests with different activation functions such as ReLU and the sigmoid function. In future activies, Amazon Kinesis will be employed for real-time data ingestion, allowing the collection and processing of diverse data sets, such as inverter readings and plant monitoring data. AWS IoT Core will be utilized to gather and manage sensors within PV plants. AWS Lambda functions will serve as a key component for processing real-time data, enabling tasks such as computing performance metrics and identifying anomalies. Moreover, Amazon DynamoDB will be implemented as a fully managed, scalable NoSQL database, adept at real-time structured data storage, efficiently managing high write and read rates.
+In the exploratory analysis, it was observed that junction temperature is linked to irradiance and ambient temperature. We applied three models: (i) linear regression, (ii) decision tree and (iii) multilayer perceptron. Linear regression is simple and easy to use with new samples, because it provides equations for both targets. Its performance (R2 and MSE) was lower compared to other models. It makes senses since the junction temperature oscillation is not well described by linear dynamics. Decision tree permits that we can interpret the regression process by examining the variables and their threshold. An interesting observation for this model is that as the depth increases, the model becomes more flexible, but when depth exceeds 10, the decision tree starts to lose quality on the validation set (overfitting). The MLP is a classical neural network na it permit us to perform several tests considering different architectures by varying the number of hidden layers and the number of neurons distributed among them. We also conducted tests with different activation functions such as ReLU and the sigmoid function. 
+
+Our approach to big data did not primarily focus on cost reduction or the optimal selection of services. Instead, our decisions regarding services, features, and configurations were heavily influenced and backed by the insights gained from laboratory experiments and the capstone project. However, in the realm of corporate or industrial projects, establishing clearer governance and defining access to various project stages is crucial to mitigate conflicts and role shadowing. Additionally, robust measures need implementation to safeguard data access and maintain security.
+
+In future activies, Amazon Kinesis will be employed for real-time data ingestion, allowing the collection and processing of diverse data sets, such as inverter readings and plant monitoring data. AWS IoT Core will be utilized to gather and manage sensors within PV plants. AWS Lambda functions will serve as a key component for processing real-time data, enabling tasks such as computing performance metrics and identifying anomalies. Moreover, Amazon DynamoDB will be implemented as a fully managed, scalable NoSQL database, adept at real-time structured data storage, efficiently managing high write and read rates.
 
 ## References
 
