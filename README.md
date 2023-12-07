@@ -79,7 +79,9 @@ For instance, in Figure 5, there are "Plane of Array (POA) irradiance [W/m²]" a
 <p align="center">
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/7b3da74f-b434-468b-8abe-99f6bcf54cfe" width="600">
 </p>
+
 Figure 5 - Plane of Array (POA) irradiance [W/m²] and Air temperature [ºC]
+
 
 Following that, in Figure 6, the two chosen days with the highest and lowest average temperatures display the simulated junction temperature behavior in PSIM. The graph illustrates that on the hottest day, the behavior differs throughout the hours of usage.
 
@@ -109,14 +111,16 @@ Figure 8 - Boxplots for irradiance (left), irradiance removing zero (center), an
 <p align="center">
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/472c6864-d42a-48bb-8c53-7464d1937783" width="400">
 </p>
+
 Figure 9 - Boxplots for junction temperature (left) and its swing (right).
+
 
 Later, the Pearson correlation matrix was constructed. The Pearson correlation matrix is crucial because it helps unveil relationships between variables. In this analysis, it revealed that the junction temperature (Tj) had a stronger association with irradiance while also displaying a direct correlation with ambient temperature, as shown in Figure 10.
 
 <p align="center">
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/68a99830-013b-4880-b42d-c5ee543e391e" width="500">
 </p>
-Figure 9 - Pearson correlation matrix.
+Figure 10 - Pearson correlation matrix.
 
 
 ## 6 - Final Considerations and Future Works
