@@ -124,6 +124,8 @@ Figure 7 - Proposed AWS Environment Architecture
 |       8b      |     Making   results available for visualization in QuickSight.                                                                                                         |
 During the work, several queries and manipulations were carried out in Athena and can be seen at: https://github.com/joaolucasdesouzasilva/IFSPproject/blob/main/SQL.md
 
+Furthermore, with the completion of the project, two notebooks with codes also used for processing, manipulation and/or testing were added to this repository.
+
 ## 5 - Discussion and Results
 
 ### 5.1 Exploratory Analysis
