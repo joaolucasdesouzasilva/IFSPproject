@@ -1,5 +1,5 @@
 # Junction Temperature Prediction for Photovoltaic Inverter Switches in Brazil using AWS environment
-The objective of this GitHub is to present a solution developed in the Amazon environment to estimate the average temperature of the junction of electronic keys.
+The objective of this GitHub is to present a solution developed in the Amazon environment to estimate the average temperature of the junction of electronic switch.
 
 <p align="center">
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/4eb25168-161b-4193-a9ff-4b39f373adb3" width="100">
