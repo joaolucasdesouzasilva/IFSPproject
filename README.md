@@ -53,7 +53,7 @@ Key points highlighting the necessity of this study also include:
 
 ## 3 - Methodology
 
-For the methodology, data was initially collected from two databases, one for Teresina-Piauí, and another for Curitiba-Paraná, with data collection every 5 minutes to be used in simulations and models. These databases were later uploaded to the Amazon environment and processed within it. The processing mainly involved converting this data to an hourly time scale and obtaining the daily average, to be applied in a subsequent phase.
+For the methodology, data was initially collected from one database, for Teresina-Piauí, with data collection every 5 minutes to be used in simulations and models. This database was later uploaded to the Amazon environment and processed within it. The processing mainly involved converting this data to an hourly time scale and obtaining the daily average, to be applied in a subsequent phase.
 
 The next step involved simulating the inverter with switches in the PSIM software to estimate the temperature. PSIM software is one of the most robust power electronics software for this purpose, with real data on losses from the switches and other components. This simulation made it possible to observe the temperature behavior at the junction of the switches. In this simulation, an inverter topology with six switches, a three-phase half-bridge converter, was used. Refer to Figure 3.
 
@@ -73,8 +73,7 @@ Subsequently, with the characteristics of the switches obtained in the simulatio
 Figure 4 - Flowchart for thermal analysis of a DC/AC converter. The inputs are the yearly mission profile and the component characteristics extracted from the PSIM’s device library or data shee.
 
 
-SOLCAST provides yearly data collected at 5-minute intervals spanning from December 30, 2017, to December 31, 2018, specifically for Teresina, PI and Curitiba-PR. This comprehensive dataset encompasses 20 features, including parameters such as Direct Horizontal Irradiance (DHI), Air Temperature, and more, totaling a significant 105,676 samples. This detailed information offers valuable insights into the climatic and environmental conditions over this period, enabling comprehensive analyses and informed decision-making in various fields and industries. 
-For instance, in Figure 5, there are "Plane of Array (POA) irradiance [W/m²]" and "Air temperature [ºC]" listed.
+SOLCAST provides yearly data collected at 5-minute intervals spanning from December 30, 2017, to December 31, 2018, specifically for Teresina, PI. This comprehensive dataset encompasses 20 features, including parameters such as Direct Horizontal Irradiance (DHI), Air Temperature, and more, totaling a significant 105,676 samples. This detailed information offers valuable insights into the climatic and environmental conditions over this period, enabling comprehensive analyses and informed decision-making in various fields and industries. For instance, in Figure 5, there are "Plane of Array (POA) irradiance [W/m²]" and "Air temperature [ºC]" listed.
 
 <p align="center">
   <img src="https://github.com/joaolucasdesouzasilva/IFSPproject/assets/73505430/7b3da74f-b434-468b-8abe-99f6bcf54cfe" width="600">
