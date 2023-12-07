@@ -107,6 +107,7 @@ Figure 7 - Proposed AWS Environment Architecture
 <p align="center">
   Table 1 - Steps in the AWS Environment.
 </p>
+
 |     Task      |                                                                                  Details                                                                                |
 |:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |        1      |     Accessing   AWS Cloud via the Learner Lab and creating an AWS Cloud9 environment.                                                                                   |
