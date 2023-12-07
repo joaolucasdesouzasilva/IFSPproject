@@ -175,7 +175,7 @@ limit 10;
 | 9  | 220              | 0.8142857142857142 |
 | 10 | 244              | 0.8357142857142857 |
 
-## 8 - Análise da Tendência da Irradiação Global ao Longo do Ano:
+## 8 - Análise da Tendência da Irradiação Global mensal:
 ~~~sql
 WITH daily_ghi AS (
   SELECT
@@ -207,17 +207,106 @@ ORDER BY month
 | 11 | 11    | 228.91805555555555 | -33.51989247311826  |
 | 12 | 12    | 212.11377056094474 | -16.80428499461081  |
 
-## 9 - 
+## 9 - Média mensal da temperatura e irradiancia no ano de 2018
 ~~~sql
+SELECT
+  EXTRACT(MONTH FROM CAST(FROM_ISO8601_TIMESTAMP(periodstart) AS TIMESTAMP)) AS month,
+  AVG(airtemp) AS avg_temperature,
+  AVG(gtitracking) AS avg_irradiance
+FROM teresina
+WHERE EXTRACT(YEAR FROM CAST(FROM_ISO8601_TIMESTAMP(periodstart) AS TIMESTAMP)) = 2018
+GROUP BY EXTRACT(MONTH FROM CAST(FROM_ISO8601_TIMESTAMP(periodstart) AS TIMESTAMP))
+ORDER BY month;
+~~~
+| #  | month | avg_temperature    | avg_irradiance     |
+|----|-------|--------------------|--------------------|
+| 1  | 1     | 25.487578405017995 | 240.79861111111111 |
+| 2  | 2     | 24.8065724206348   | 216.57440476190476 |
+| 3  | 3     | 25.57049731182782  | 243.26232078853047 |
+| 4  | 4     | 25.280844907407346 | 247.3896990740741  |
+| 5  | 5     | 26.206518817204287 | 249.3412858422939  |
+| 6  | 6     | 27.280081018518526 | 276.2980324074074  |
+| 7  | 7     | 28.05545474910397  | 292.32459677419354 |
+| 8  | 8     | 28.681966845878037 | 314.7170698924731  |
+| 9  | 9     | 30.63935185185183  | 333.06944444444446 |
+| 10 | 10    | 29.91630824372764  | 315.51556899641577 |
+| 11 | 11    | 29.49736111111106  | 267.1516203703704  |
+| 12 | 12    | 26.255134529147917 | 240.43060538116592 |
 
+## 10 - Criação do dataset com a média por hora para o ano de 2018:
+~~~sql
+CREATE TABLE IF NOT EXISTS media_hora_2018_teresina AS
+WITH filtered_data AS (
+  SELECT
+    CAST(FROM_ISO8601_TIMESTAMP(periodend) AS TIMESTAMP) AS period_end,
+    airtemp,
+    azimuth,
+    cloudopacity,
+    dewpointtemp,
+    dhi,
+    dni,
+    ebh,
+    ghi,
+    gtifixedtilt,
+    gtitracking,
+    precipitablewater,
+    relativehumidity,
+    snowwater,
+    surfacepressure,
+    winddirection10m,
+    windspeed10m,
+    zenith,
+    albedodaily
+  FROM teresina
+  WHERE EXTRACT(YEAR FROM CAST(FROM_ISO8601_TIMESTAMP(periodend) AS TIMESTAMP)) = 2018
+),
+numbered_intervals AS (
+  SELECT
+    period_start,
+    FLOOR(DATEDIFF(minute, MIN(period_end), period_end) / 60) AS interval_number
+  FROM filtered_data
+)
+SELECT
+  TIMESTAMPADD(hour, interval_number, TIMESTAMP '2018-01-01 00:00:00') AS periodend,
+  AVG(airtemp) AS avg_airtemp,
+  AVG(azimuth) AS avg_azimuth,
+  AVG(cloudopacity) AS avg_cloudopacity,
+  AVG(dewpointtemp) AS avg_dewpointtemp,
+  AVG(dhi) AS avg_dhi,
+  AVG(dni) AS avg_dni,
+  AVG(ebh) AS avg_ebh,
+  AVG(ghi) AS avg_ghi,
+  AVG(gtifixedtilt) AS avg_gtifixedtilt,
+  AVG(gtitracking) AS avg_gtitracking,
+  AVG(precipitablewater) AS avg_precipitablewater,
+  AVG(relativehumidity) AS avg_relativehumidity,
+  AVG(snowwater) AS avg_snowwater,
+  AVG(surfacepressure) AS avg_surfacepressure,
+  AVG(winddirection10m) AS avg_winddirection10m,
+  AVG(windspeed10m) AS avg_windspeed10m,
+  AVG(zenith) AS avg_zenith,
+  AVG(albedodaily) AS avg_albedodaily
+FROM
+  filtered_data
+JOIN
+  numbered_intervals
+ON
+  FLOOR(DATEDIFF(minute, MIN(filtered_data.periodend), filtered_data.periodend) / 60 / 12) = numbered_intervals.interval_number
+GROUP BY
+  numbered_intervals.interval_number;
 ~~~
 
-## 10 - 
 ~~~sql
-
+SELECT periodend, airtemp, gtotracking
+FROM teresina
+limit 5;
 ~~~
-
-
-
+| # | periodend    | airtemp  | gtitracking |
+|---|--------------|----------|-------------|
+| 1 | 01/01/2018   | 27.90208 | 289.58681   |
+| 2 | 02/01/2018   | 26.43299 | 232.63194   |
+| 3 | 03/01/2018   | 25.03889 | 250.94444   |
+| 4 | 04/01/2018   | 25.4316  | 254.875     |
+| 5 | 05/01/2018   | 25.33715 | 140.43056   |
 
 
